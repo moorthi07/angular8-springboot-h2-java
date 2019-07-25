@@ -1,0 +1,45 @@
+<div [class.dark-theme]="isDarkTheme">
+  <mat-toolbar color="primary">
+    <span class="flex80">
+      <button mat-icon-button  routerLink="/" routerLinkActive="active" (click)="sidenav.toggle()">
+      <mat-icon class="icon-20">home</mat-icon>
+    </button> 
+     <span>  Angular Springboot h2</span>
+    </span>
+    <span class="floatr"> 
+    
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    </span>      
+  </mat-toolbar> 
+
+  <mat-sidenav-container>
+    <mat-sidenav position="end" #sidenav>
+      <mat-tab-group>
+        <mat-tab label="Menu">
+          <div class="menuinsidenav">
+   <li> <a (click)="togglenav()" routerLink="/address" routerLinkActive="active">Address </a></li>
+  <hr/> 
+    <li> <a (click)="togglenav()" routerLink="/cccaddress" routerLinkActive="active">Cccaddress </a></li>
+  <hr/> 
+    <li> <a (click)="togglenav()" routerLink="/posts" routerLinkActive="active">Posts </a></li>
+  <hr/> 
+            </div>
+        </mat-tab>
+        <mat-tab label="Esets">
+          <button mat-icon-button (click)="sidenav.close()">
+      <mat-icon>close</mat-icon>
+    </button>  
+        </mat-tab>
+        <mat-tab label="Account">
+        </mat-tab>
+      </mat-tab-group>
+    </mat-sidenav>
+
+    <!-- Main body Placeholder  -->
+    <router-outlet class=" ">
+    </router-outlet>
+    <!--/ Main body Placeholder  -->
+  </mat-sidenav-container>
+</div>
